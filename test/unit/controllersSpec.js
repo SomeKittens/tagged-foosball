@@ -9,7 +9,7 @@ describe('controllers', function() {
     _rootScope = $rootScope;
     
     var genFB = function(location) {
-      return $firebase(new Firebase('https://tagged-foosball.firebaseio.com/' + location));
+      return $firebase(new MockFirebase('https://tagged-foosball.firebaseio.com/' + location).autoFlush());
     };
     
     foosCtrl = $controller('FoosCtrl', {
@@ -58,6 +58,8 @@ describe('controllers', function() {
       
       done();
     });
+    
+    _timeout.flush();
   });/*
     
   it('should sync with Firebase', function(done) {

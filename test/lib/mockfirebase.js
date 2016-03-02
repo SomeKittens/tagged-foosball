@@ -867,7 +867,7 @@
     if( typeof(jasmine) !== 'undefined' ) {
       fn = function(obj, method) {
         if( arguments.length === 2 ) {
-          return spyOn(obj, method).andCallThrough();
+          return spyOn(obj, method).and.callThrough();
         }
         else {
           var fn = jasmine.createSpy();

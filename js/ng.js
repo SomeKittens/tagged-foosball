@@ -95,7 +95,7 @@ angular.module('foosball', [
       $scope.game.started = +(new Date());
       console.log('a');
       console.log($scope.games.$add);
-      $scope.games.$add({}).then(function(ref) {
+      return $scope.games.$add({}).then(function(ref) {
         console.log('b');
         $scope.game.active = true;
         activeGameRef = $scope.games.$child(ref.name());
